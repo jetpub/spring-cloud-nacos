@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: false # 是否将服务id转换为小写
+      routes:
+        - id: admin-core
+          # lb代表从注册中心获取服务，且已负载均衡方式转发
+          uri: lb://admin-core
+          predicates:
+            - Path=/admin-core/**
+          # 去除原始请求路径中的前1路径，即/gateway
+          filters:
+            - StripPrefix=1

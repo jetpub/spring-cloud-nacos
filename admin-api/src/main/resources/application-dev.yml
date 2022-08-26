@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    username: root
+    password: root0
+    driverClassName:  com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.50.209:3306/landlord?characterEncoding=utf8&useSSL=false&rewriteBatchedStatements=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true
+# user:
+#   username: admin
+#   age: 2000
+# useLocalCache: false

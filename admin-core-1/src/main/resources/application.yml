@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: "admin-core"
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+server:
+  port: 8091
+# user:
+#   username: admin
+#   age: 2001
+useLocalCache: false
+management:
+  endpoints:
+    web:
+      exposure: include=*
+service-url:
+  nacos-user-service: http://admin-core
